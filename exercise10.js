@@ -71,15 +71,14 @@ function exercise10() {
   });
 
   return allVideos.map((video) => {
-    const url = '';
+    let url = '';
+    video.boxarts.forEach((boxarts) => {
+      if (boxarts.width === 150 && boxarts.height === 200) url = boxarts.url;
+    });
     return {
       id: video.id,
       title: video.title,
-      boxart: video.boxarts.forEach((boxart) => {
-        let url;
-        if (boxart.width === 150 && boxart.height === 200) url = boxart.url;
-        return url;
-      }),
+      boxart: url,
     };
   });
 }
