@@ -29,3 +29,30 @@ function exercise12() {
 }
 
 console.log(exercise12());
+
+// exercise13 : id- key , title - value;
+function exercise13() {
+  const videos = [
+    {
+      id: 65432445,
+      title: 'The Chamber',
+    },
+    {
+      id: 675465,
+      title: 'Fracture',
+    },
+    {
+      id: 70111470,
+      title: 'Die Hard',
+    },
+    {
+      id: 654356453,
+      title: 'Bad Boys',
+    }];
+  return videos.reduce((accumulatedMap, video) => {
+    const obj = {};
+    obj[video.id] = video.title;
+    return Object.assign(accumulatedMap, obj);
+  }, {});
+}
+console.log(exercise13());
